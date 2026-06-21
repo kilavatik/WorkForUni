@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    <title>loremtravel | Фотогалерея</title>
+    <style>
+        .list {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        .discovery {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        .card {
+            width: 380px;
+            flex-shrink: 0;
+        }
+        @media(max-width: 1280px) {
+            .discovery {
+                justify-content: center;
+            }
+        }
+        @media(max-width: 1024px) {
+            .card {
+                width: calc(50% - 15px);
+            }
+        }
+        @media(max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+            .list {
+                padding: 0 16px;
+            }
+        }
+        .stats-grid {
+            display: flex;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .stat-item {
+            flex: 1;
+            background: #fef5ef;
+            border-radius: 20px;
+            padding: 32px 24px;
+            text-align: center;
+            min-width: 180px;
+        }
+        .stat-number {
+            font-size: 42px;
+            font-weight: bold;
+            color: #FA793C;
+            font-family: 'Kanit-bold', sans-serif;
+        }
+        .stat-label {
+            font-size: 16px;
+            color: #555;
+            margin-top: 8px;
+        }
+        .photo-tips {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            color: white;
+            text-align: center;
+        }
+        .photo-tips h4 {
+            color: #FA793C;
+            margin-bottom: 16px;
+        }
+        .photo-tips p {
+            color: #ddd;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        h3 {
+            font-family: 'Kanit-bold', sans-serif;
+            font-size: 30px;
+            margin: 40px 0 24px 0;
+            position: relative;
+            display: inline-block;
+        }
+        h3:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #FA793C;
+            border-radius: 2px;
+        }
+        .instagram-feed {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .insta-item {
+            border-radius: 15px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+        }
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+        .insta-item:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>  
+    <header>
+        <a href="#"><img src="Icons/menu.png" alt="" width="32px" height="32px" id="third"></a>
+        <div class="logo">  
+            <a href="index.html" style="text-decoration: none; display: flex; gap: 14px; align-items: center; color: #FA793C;">
+                <img src="Icons/logo.png" alt="">
+                <p>loremtravel.com</p>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="discover.html">Открытия</a>
+            <a href="photo.html">Фото</a>
+            <a href="contact.html">Контакты</a>
+            <a href="about.html">О нас</a>
+            <a href="#"><img src="Icons/action.svg" alt=""></a>
+        </nav>
+        <a href="#"><img src="Icons/action.svg" alt="" id="third"></a>
+    </header>
+    <main>
+        <section class="welcom" style="background-image: url(Icons/img1.png)">
+            <section class="info">
+                <h1>ФОТОГАЛЕРЕЯ ПУТЕШЕСТВИЙ</h1>
+                <hr>
+                <p>
+                    Вдохновляющие кадры со всего мира. Каждое фото рассказывает свою уникальную историю. 
+                    Присоединяйтесь к нашему сообществу фотографов-путешественников и делитесь своими шедеврами.
+                </p>
+                <div class="enter">
+                    <input type="text" placeholder="Ваш Instagram для связи">
+                    <button>ПОДЕЛИТЬСЯ ФОТО</button>
+                </div>
+            </section>
+            <section class="news" id="first">
+                <div class="news-content">
+                    <div class="title">
+                        <h3>ЛУЧШИЕ КАДРЫ</h3>    
+                        <div class="scroll">
+                            <img src="Icons/last.png" alt="">
+                            <img src="Icons/next.png" alt="">
+                        </div>     
+                    </div>
+                    <hr>
+                    <div class="more-news">
+                        <div>
+                            <h4>Закат в Париже</h4>
+                            <p>Эйфелева башня на закате — визитная карточка Парижа. Тысячи фотографов мечтают запечатлеть этот волшебный момент.</p>
+                        </div>
+                        <div>
+                            <h4>Северное сияние</h4>
+                            <p>Норвегия, Исландия, Финляндия — лучшие места для наблюдения за этим природным чудом.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="list">
+            <section class="news" id="second">
+                <div class="news-content">
+                    <div class="title">
+                        <h3>ФОТОИСТОРИИ</h3>    
+                        <div class="scroll" id="hide">
+                            <img src="Icons/last.png" alt="">
+                            <img src="Icons/next.png" alt="">
+                        </div>     
+                    </div>
+                    <hr>
+                    <div class="more-news">
+                        <div>
+                            <h4>Бали, Индонезия</h4>
+                            <p>Храмы, рисовые террасы и бесконечный океан. Рай для фотографов со всего мира.</p>
+                        </div>
+                        <div>
+                            <h4>Шотландия</h4>
+                            <p>Замки, озера и таинственные туманы. Каждый кадр здесь похож на картину из сказки.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-third">
+                    <img src="Icons/last.png" alt="">
+                    <img src="Icons/next.png" alt="">
+                </div>    
+            </section>
+            
+            <h3>ПОПУЛЯРНЫЕ ФОТО</h3>
+            <div class="discovery">
+                <div class="card">
+                    <img src="Icons/blog1.png" alt="Горный пейзаж" class="card-preview">
+                    <div class="card-footer">
+                        <h4>Горы Швейцарии</h4>
+                        Величественные Альпы, чистый воздух и живописные деревушки. Мечта каждого фотографа-пейзажиста.
+                        <div class="last-time">
+                            <img src="Icons/time.svg" alt=""/> 2 дня назад • 1 234 лайка
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Icons/blog2.png" alt="Океанский закат" class="card-preview">
+                    <div class="card-footer">
+                        <h4>Мальдивы</h4>
+                        Бескрайний океан, золотое солнце и бирюзовая вода. Идеальное место для романтических фото.
+                        <div class="last-time">
+                            <img src="Icons/time.svg" alt=""/> 3 дня назад • 987 лайков
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="first">
+                    <img src="Icons/blog4.png" alt="Городские огни" class="card-preview">
+                    <div class="card-footer">
+                        <h4>Токио, Япония</h4>
+                        Мегаполис в огнях ночных неоновых вывесок. Уникальная атмосфера и тысячи возможностей для кадра.
+                        <div class="last-time">
+                            <img src="Icons/time.svg" alt=""/> 5 дней назад • 2 156 лайков
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="discovery">
+                <div class="card">
+                    <img src="Icons/blog5.png" alt="Исландия" class="card-preview">
+                    <div class="card-footer">
+                        <h4>Исландия</h4>
+                        Ледники, вулканы и водопады. Невероятные пейзажи, которые кажутся с другой планеты.
+                        <div class="last-time">
+                            <img src="Icons/time.svg" alt=""/> 1 неделя назад • 3 421 лайк
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="Icons/blog6.png" alt="Сакура" class="card-preview">
+                    <div class="card-footer">
+                        <h4>Киото, Япония</h4>
+                        Цветение сакуры, древние храмы и традиционные чайные церемонии. Весна в Японии — время чудес.
+                        <div class="last-time">
+                            <img src="Icons/time.svg" alt=""/> 4 дня назад • 1 876 лайков
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="first">
+                    <img src="Icons/blog7.png" alt="Сафари" class="card-preview">
+                    <div class="card-footer">
+                        <h4>Сафари, Кения</h4>
+                        Дикая природа Африки. Львы, жирафы и незабываемые закаты в саванне.
+                        <div class="last-time">
+                            <img src="Icons/time.svg" alt=""/> 6 дней назад • 2 543 лайка
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Статистика -->
+            <h3>НАШЕ СООБЩЕСТВО</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15 000+</div>
+                    <div class="stat-label">подписчиков в Instagram</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">8 500+</div>
+                    <div class="stat-label">опубликованных фото</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-label">стран мира</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4.9 ★</div>
+                    <div class="stat-label">средняя оценка</div>
+                </div>
+            </div>
+
+            <h3>ФОТОГРАФИИ</h3>
+            <div class="photograph">
+                <div class="photos">
+                    <div class="photo" style="background-image: url(Icons/blog5.png);">
+                        <h3>ЗАКАТ НА БАЛИ</h3>
+                        <p>
+                            Закат на Бали — одно из самых завораживающих зрелищ на планете. 
+                            Тысячи туристов ежегодно приезжают сюда, чтобы запечатлеть этот момент. 
+                            Золотой час здесь длится особенно долго, даря фотографам уникальные кадры.
+                        </p>
+                    </div>
+                    <div class="photo" style="background-image: url(Icons/blog4.png);">
+                        <h3>СЕВЕРНОЕ СИЯНИЕ</h3>
+                        <p>
+                            Северное сияние в Норвегии. Мечта каждого путешественника и фотографа. 
+                            Лучшее время для наблюдения — с сентября по март. 
+                            Зеленые и фиолетовые всполохи на ночном небе завораживают и вдохновляют.
+                        </p>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="litle-card">
+                        <img src="Icons/blog6.png" alt="Париж" class="card-preview">
+                        <div class="card-footer">
+                            <h4>Париж, Франция</h4>
+                            Город любви и света. Эйфелева башня, Лувр и уютные улочки Монмартра.
+                            <div class="last-time">
+                                <img src="Icons/time.svg" alt=""/> 2 дня назад
+                            </div>
+                        </div>
+                    </div>
+                    <div class="litle-card" id="hide">
+                        <img src="Icons/blog7.png" alt="Сан-Франциско" class="card-preview">
+                        <div class="card-footer">
+                            <h4>Сан-Франциско, США</h4>
+                            Знаменитый мост Золотые Ворота, туман и атмосфера свободы.
+                            <div class="last-time">
+                                <img src="Icons/time.svg" alt=""/> 2 дня назад
+                            </div>
+                        </div>
+                    </div>
+                    <div class="litle-card" id="first">
+                        <img src="Icons/blog8.png" alt="Дубай" class="card-preview">
+                        <div class="card-footer">
+                            <h4>Дубай, ОАЭ</h4>
+                            Город будущего. Небоскребы, шопинг и восточная сказка посреди пустыни.
+                            <div class="last-time">
+                                <img src="Icons/time.svg" alt=""/> 2 дня назад
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Совет для фотографов -->
+            <div class="photo-tips">
+                <h4>📸 СОВЕТ ДНЯ ДЛЯ ФОТОГРАФОВ</h4>
+                <p>Лучшее время для съёмки пейзажей — «золотой час»: первый час после восхода и последний час перед закатом. В это время свет становится мягким и тёплым, а тени — длинными и выразительными.</p>
+            </div>
+
+            <!-- Кнопка связи - ИСПРАВЛЕНА на ссылку -->
+            <div style="text-align: center; margin: 40px 0 60px;">
+                <a href="contact.html" style="background: #FA793C; border: none; color: white; padding: 14px 50px; border-radius: 30px; font-family: 'Kanit', sans-serif; font-size: 18px; cursor: pointer; font-weight: bold; text-decoration: none; display: inline-block; transition: 0.2s;">Записаться на фототур →</a>
+                <p style="margin-top: 16px; color: #888;">Индивидуальные фототуры с профессиональными гидами-фотографами</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="index.html">
+            <div style="display:inline-block;vertical-align:middle;">
+                <img src="Icons/logo2.png" alt="img" width="38px"/>
+            </div>
+            <div style="display:inline-block;">
+                <div>loremtravel.com</div>
+            </div>
+        </a>
+    </footer>
+</body>
+</html>
