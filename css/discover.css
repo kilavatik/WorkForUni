@@ -1,0 +1,124 @@
+@import url('index.css');
+
+.welcom {
+    width: 100%;
+    display: flex;
+    height: 550px;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.welcom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    border-radius: 0;
+}
+
+.welcom .info {
+    position: relative;
+    z-index: 2;
+    width: 700px;
+    text-align: center;
+}
+
+.welcom .info p {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.page-section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+.section-title {
+    font-family: 'Kanit-bold', sans-serif;
+    font-size: 32px;
+    margin: 32px 0 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: #FA793C;
+    border-radius: 2px;
+}
+
+.discovery {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid #eaeaea;
+    width: calc(33.33% - 20px);
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+}
+
+.card-preview {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.btn-filled {
+    background: #FA793C;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    border-radius: 30px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-filled:hover {
+    background: #e0682a;
+}
+
+@media(max-width: 1024px) {
+    .card {
+        width: calc(50% - 15px);
+    }
+}
+
+@media(max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+    .welcom .info {
+        width: 90%;
+        padding: 20px;
+    }
+    .welcom .info h1 {
+        font-size: 32px;
+    }
+}
